@@ -21,7 +21,7 @@ export default class Button extends Component {
         for (let j = 0; j < 7; j++) {
             let row = [];
             for (let i = 0; i < 6; i++) {
-                let val = j * 5 + i;
+                let val = j * 6 + i;
                 row.push(<Button
                     key={val}
                     style={[{ flex: 1 }]}
