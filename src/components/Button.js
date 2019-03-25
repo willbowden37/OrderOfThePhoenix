@@ -7,7 +7,7 @@ import {
 export default class Button extends Component {
     render() {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.press()}>
                 <Text>
                     {this.props.name}
                 </Text>
