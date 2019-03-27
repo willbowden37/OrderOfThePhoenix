@@ -4,7 +4,7 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
-import Button from './Button.js';
+import Tile from './Tile.js';
 
 export default class GameBoard extends Component {
     render() {
@@ -21,8 +21,8 @@ export default class GameBoard extends Component {
             let row = [];
             for (let i = 0; i < 6; i++) {
                 let val = j * 7 + i;
-                row.push(<Button
-                    key={val}
+                row.push(<Tile
+                    keyy={val}
                     style={[{ flex: 1 }]}
                     color='white' 
 					makeMove={this.props.makeMove}/>)

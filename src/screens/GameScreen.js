@@ -74,7 +74,7 @@ export default class GameScreen extends Component {
 						ii += d[1];
 						jj += d[0];
 						// If we go off the board or encounter a blank or encounter a point with a different value than the starting point, break.
-						if (!isValidCoord(jj, ii) || this.state.board[ii][jj] == 0 || this.state.board[i][j] != this.state.board[ii][jj]) {
+						if (!this.isValidCoord(jj, ii) || this.state.board[ii][jj] == 0 || this.state.board[i][j] != this.state.board[ii][jj]) {
 							break;
 						}
 						// We made it four units, so we have a winner.
@@ -97,7 +97,7 @@ export default class GameScreen extends Component {
 		if (this.state.board[0][column] != 0) {
 			return;
 		}
-		let state = deepCopy(this.state);
+		let state = this.deepCopy(this.state);
 		for (let i = 1; i <= 6; ++i) {
 			if (i == 6 || this.state.board[i][column] != 0) {
 				state.board[i - 1][column] = state.playerTurn;
@@ -105,7 +105,7 @@ export default class GameScreen extends Component {
 				break;
 			}
 		}
-		this.setState(deepCopy(state));
+		this.setState(this.deepCopy(state));
 		if (this.isGameOver()) {
 			NavigationService.navigate("WinScreen", {winner: this.getWinStatus()});
 		}
