@@ -15,7 +15,7 @@ export default class TitleScreen extends Component {
                     name='Instructions'
                     press={() => navigationService.navigate('Inst')}
                 />
-                 <Button press={() => navigationService.navigate('Win', {playerOneWin: 'true'})}
+                 <Button press={() => navigationService.navigate('Win', {winner: 1})}
                         name='Win Screen'
                 />
              </View>
