@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text} from 'react-native';
+import GameBoard from '../components/GameBoard';
 
 import NavigationService from '../services/NavigationService';
 
@@ -111,7 +112,7 @@ export default class GameScreen extends Component {
 
     render() {
         return(
-            <Text>This is the Game</Text>
+            <GameBoard/>
         );
     }
 }
