@@ -13,9 +13,6 @@ export default class Tile extends Component {
 			<TouchableOpacity
 			onPress={this.props.makeMove(this.props.key % 7)}
 			style = {{backgroundColor: this.props.color, padding: 10, margins: 10, borderWidth: 5, borderColor: black}}>
-                <Text>
-                    {this.props.name}
-                </Text>
             </TouchableOpacity>
         );
     }

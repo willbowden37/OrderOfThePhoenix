@@ -5,14 +5,9 @@ import {
 } from 'react-native';
 
 export default class Button extends Component {
-	constructor(props) {
-		super(props);
-	}
     render() {
         return (
-			<TouchableOpacity
-			onPress={this.props.makeMove(this.props.key % 7)}
-			style = {{backgroundColor: this.props.color, padding: 10, margins: 10, borderWidth: 5, borderColor: black}}>
+            <TouchableOpacity onPress={() => this.props.press()}>
                 <Text>
                     {this.props.name}
                 </Text>
