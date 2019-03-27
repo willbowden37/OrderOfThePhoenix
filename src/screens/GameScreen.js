@@ -19,6 +19,7 @@ export default class GameScreen extends Component {
 			],
 			playerTurn: -1
 		}
+		this.makeMove = this.makeMove.bind(this);
 	}
 
 	initBoard() {
@@ -112,7 +113,7 @@ export default class GameScreen extends Component {
 
     render() {
         return(
-            <GameBoard/>
+            <GameBoard makeMove={this.makeMove}/>
         );
     }
 }
