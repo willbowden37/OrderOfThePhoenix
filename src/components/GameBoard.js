@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import Button from './Button.js';
 
-export default class Button extends Component {
+export default class GameBoard extends Component {
     render() {
         return (
             <TouchableOpacity>
@@ -21,12 +21,12 @@ export default class Button extends Component {
         for (let j = 0; j < 7; j++) {
             let row = [];
             for (let i = 0; i < 6; i++) {
-                let val = j * 6 + i;
+                let val = j * 7 + i;
                 row.push(<Button
                     key={val}
                     style={[{ flex: 1 }]}
-                    color='white' />)
-
+                    color='white' 
+					makeMove={this.props.makeMove}/>)
             }
             buttonGrid.push(<View key={j}>{row}</View>)
         }
