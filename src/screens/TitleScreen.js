@@ -10,13 +10,14 @@ export default class TitleScreen extends Component {
     render() {
         return(
             <View>
-                <Text>This is the Title</Text>
+                <Text>Connect 4</Text>
+                 <Button press={() => navigationService.navigate('Game')}
+                        name='Play Game'
+                />
+
                 <Button
                     name='Instructions'
                     press={() => navigationService.navigate('Inst')}
-                />
-                 <Button press={() => navigationService.navigate('Win', {winner: 1})}
-                        name='Win Screen'
                 />
              </View>
         );
