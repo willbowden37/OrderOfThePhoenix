@@ -5,7 +5,7 @@ import NavigationService from '../services/NavigationService';
 
 export default class GameScreen extends Component {
 
-	constructor() {
+	constructor(props) {
 		super(props);
 		this.state = {
 			board: [

@@ -47,7 +47,7 @@ const Root = createStackNavigator(
         Win: WinScreen,
     },
     {
-        initialRouteName: 'Title'
+        initialRouteName: 'Game'
     }
 );
 
