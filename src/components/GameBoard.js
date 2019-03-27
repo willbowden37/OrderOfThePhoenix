@@ -24,13 +24,8 @@ export default class GameBoard extends Component {
                 row.push(<Button
                     key={val}
                     style={[{ flex: 1 }]}
-<<<<<<< HEAD
-                    color='black' />)
-
-=======
                     color='white' 
 					makeMove={this.props.makeMove}/>)
->>>>>>> 2f9aa3d30c88251b0042013b7d1822f3b5356737
             }
             buttonGrid.push(<View key={j}>{row}</View>)
         }
