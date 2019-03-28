@@ -5,6 +5,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Tile from './Tile.js';
+import style from '../Styles/style';
 
 export default class GameBoard extends Component {
     render() {
@@ -22,14 +23,15 @@ export default class GameBoard extends Component {
             for (let i = 0; i < 6; i++) {
                 let val = j * 7 + i;
                 row.push(<Tile
-                    keyy={val}
+					key={val}
+                    column={val % 7} // cannot use the key instead of this because the key prop can't be read
                     style={[{ flex: 1 }]}
                     color='white' 
 					makeMove={this.props.makeMove}/>)
             }
-            buttonGrid.push(<View key={j}>{row}</View>)
+            buttonGrid.push(<View key={j} style={style.gridRow}>{row}</View>)
         }
 
-        return (<View>{buttonGrid}</View>);
+        return (<View style={style.grid}>{buttonGrid}</View>);
     }
 }

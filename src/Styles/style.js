@@ -17,7 +17,7 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        },
+    },
     button: {
         padding: 15,
         margin: 5,
@@ -27,5 +27,21 @@ export default StyleSheet.create({
     buttonText: {
         fontSize: 50,
         textAlign: 'center',
-    },
+	},
+	//todo
+	grid: {
+
+	},
+	//todo
+	gridRow: {
+
+	},
+	tile: {
+		padding: 10,
+		margin: 1,
+		borderWidth: 5,
+		borderColor: 'black',
+		width: 50,
+		height: 50
+	}
 })
