@@ -4,9 +4,6 @@ export default StyleSheet.create({
     basicText: {
         color: 'blue',
         fontSize: 20,
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     pageTitle: {
         color: 'blue',
