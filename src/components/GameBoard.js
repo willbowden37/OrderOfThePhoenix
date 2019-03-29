@@ -33,10 +33,10 @@ export default class GameBoard extends Component {
 
     createButtonGrid() {
         let buttonGrid = []
-        for (let j = 0; j < 7; j++) {
+        for (let i = 0; i < 6; i++) {
             let row = [];
-            for (let i = 0; i < 6; i++) {
-                let val = j * 7 + i;
+            for (let j = 0; j < 7; j++) {
+                let val = i * 7 + j;
                 row.push(<Tile
 					key={val}
                     column={val % 7} // cannot use the key instead of this because the key prop can't be read
@@ -44,7 +44,7 @@ export default class GameBoard extends Component {
                     color={this.intToColor(this.props.board[i][j])}
 					makeMove={this.props.makeMove}/>)
             }
-            buttonGrid.push(<View key={j} style={style.gridRow}>{row}</View>)
+            buttonGrid.push(<View key={i} style={style.gridRow}>{row}</View>)
         }
 
         return (<View style={style.grid}>{buttonGrid}</View>);

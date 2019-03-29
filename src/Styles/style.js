@@ -25,12 +25,10 @@ export default StyleSheet.create({
         fontSize: 50,
         textAlign: 'center',
     },
-    //todo
     grid: {
         flexDirection: 'column',
         flex: 9,
     },
-    //todo
     gridRow: {
         flexDirection: 'row',
         flex: 1,
