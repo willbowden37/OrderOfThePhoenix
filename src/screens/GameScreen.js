@@ -63,23 +63,27 @@ export default class GameScreen extends Component {
 			[1, -1],
 			[0, -1],
 			[-1, -1]
-		]
+		];
+		console.log("aaa");
 		for (let i = 0; i < 6; ++i) {
 			for (let j = 0; j < 7; ++j) {
-				// Each combination of i, j represents a point on the board
-				let ii = i;
-				let jj = j;
-				for (d in directions) {
+				for (let h = 0; h < 8; ++h) {
+					// Each combination of i, j represents a point on the board
+					let ii = i;
+					let jj = j;
 					for (let k = 0; k < 4; ++k) {
-						// For each direction, try going four units in that direction
-						ii += d[1];
-						jj += d[0];
+						console.log(i, j, h, k)
+						if (i == 5 && j == 0) console.log("ccc", ii, jj, this.isValidCoord(jj, ii) ? this.state.board[ii][jj] : "");
 						// If we go off the board or encounter a blank or encounter a point with a different value than the starting point, break.
+						console.log(!this.isValidCoord(jj, ii), this.isValidCoord(jj, ii) ? this.state.board[ii][jj] == 0 : "", this.isValidCoord(jj, ii) ? this.state.board[i][j] != this.state.board[ii][jj] : "")
 						if (!this.isValidCoord(jj, ii) || this.state.board[ii][jj] == 0 || this.state.board[i][j] != this.state.board[ii][jj]) {
 							break;
 						}
+						ii += directions[h][1];
+						jj += directions[h][0];
 						// We made it four units, so we have a winner.
 						if (k == 3) {
+							console.log("bbb");
 							return this.state.board[i][j];
 						}
 					}
@@ -94,6 +98,14 @@ export default class GameScreen extends Component {
 		return this.getWinStatus() != 0 || this.isBoardFilled();
 	}
 
+	// We needed to create a callback here because we need state to be updated when we're checking if the
+	// game is finished.
+	performWinSequence() {
+		if (this.isGameOver()) {
+			NavigationService.navigate("Win", { winner: this.getWinStatus() });
+		}
+	}
+
 	makeMove(column) {
 		if (this.state.board[0][column] != 0) {
 			return;
@@ -106,10 +118,7 @@ export default class GameScreen extends Component {
 				break;
 			}
 		}
-		this.setState(this.deepCopy(state));
-		if (this.isGameOver()) {
-			NavigationService.navigate("WinScreen", { winner: this.getWinStatus() });
-		}
+		this.setState(this.deepCopy(state), this.performWinSequence);
 	}
 
 	render() {
