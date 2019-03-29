@@ -64,7 +64,6 @@ export default class GameScreen extends Component {
 			[0, -1],
 			[-1, -1]
 		];
-		console.log("aaa");
 		for (let i = 0; i < 6; ++i) {
 			for (let j = 0; j < 7; ++j) {
 				for (let h = 0; h < 8; ++h) {
@@ -72,10 +71,7 @@ export default class GameScreen extends Component {
 					let ii = i;
 					let jj = j;
 					for (let k = 0; k < 4; ++k) {
-						console.log(i, j, h, k)
-						if (i == 5 && j == 0) console.log("ccc", ii, jj, this.isValidCoord(jj, ii) ? this.state.board[ii][jj] : "");
 						// If we go off the board or encounter a blank or encounter a point with a different value than the starting point, break.
-						console.log(!this.isValidCoord(jj, ii), this.isValidCoord(jj, ii) ? this.state.board[ii][jj] == 0 : "", this.isValidCoord(jj, ii) ? this.state.board[i][j] != this.state.board[ii][jj] : "")
 						if (!this.isValidCoord(jj, ii) || this.state.board[ii][jj] == 0 || this.state.board[i][j] != this.state.board[ii][jj]) {
 							break;
 						}
@@ -83,7 +79,6 @@ export default class GameScreen extends Component {
 						jj += directions[h][0];
 						// We made it four units, so we have a winner.
 						if (k == 3) {
-							console.log("bbb");
 							return this.state.board[i][j];
 						}
 					}
