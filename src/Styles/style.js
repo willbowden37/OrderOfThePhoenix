@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     basicText: {
@@ -27,21 +27,30 @@ export default StyleSheet.create({
     buttonText: {
         fontSize: 50,
         textAlign: 'center',
-	},
-	//todo
-	grid: {
-
-	},
-	//todo
-	gridRow: {
-
-	},
-	tile: {
-		padding: 10,
-		margin: 1,
-		borderWidth: 5,
-		borderColor: 'black',
-		width: 50,
-		height: 50
-	}
+    },
+    //todo
+    grid: {
+        flexDirection: 'column',
+        flex: 9,
+    },
+    //todo
+    gridRow: {
+        flexDirection: 'row',
+        flex: 1,
+    },
+    tile: {
+        padding: 10,
+        margin: 1,
+        borderWidth: 5,
+        borderColor: 'black',
+        borderRadius: 40,
+        width: 50,
+        height: 50
+    },
+    gameContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'yellow',
+    }
 })
