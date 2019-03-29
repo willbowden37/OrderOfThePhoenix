@@ -113,7 +113,7 @@ export default class GameScreen extends Component {
 
     render() {
         return(
-            <GameBoard makeMove={this.makeMove}/>
+            <GameBoard makeMove={this.makeMove} board={this.state.board}/>
         );
     }
 }
