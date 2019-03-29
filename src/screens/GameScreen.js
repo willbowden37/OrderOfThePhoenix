@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import {Text} from 'react-native';
+import React, { Component } from 'react';
+import { Text } from 'react-native';
 import GameBoard from '../components/GameBoard';
+import style from '../Styles/style';
 
 import NavigationService from '../services/NavigationService';
 
@@ -27,7 +28,7 @@ export default class GameScreen extends Component {
 		for (let i = 0; i <= 5; ++i) {
 			let row = []
 			for (let j = 0; j <= 6; ++j) {
-				row.push({x: j, y: i, value: 0})
+				row.push({ x: j, y: i, value: 0 })
 			}
 			ret.push(row);
 		}
@@ -51,7 +52,7 @@ export default class GameScreen extends Component {
 		}
 		return true;
 	}
-	
+
 	getWinStatus() {
 		let directions = [
 			[-1, 0],
@@ -107,13 +108,15 @@ export default class GameScreen extends Component {
 		}
 		this.setState(this.deepCopy(state));
 		if (this.isGameOver()) {
-			NavigationService.navigate("WinScreen", {winner: this.getWinStatus()});
+			NavigationService.navigate("WinScreen", { winner: this.getWinStatus() });
 		}
 	}
 
-    render() {
-        return(
-            <GameBoard makeMove={this.makeMove}/>
-        );
-    }
+	render() {
+		return (
+			<View style={style.gameContainer}>
+				<GameBoard makeMove={this.makeMove} />
+			</View>
+		);
+	}
 }
