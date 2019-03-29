@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import GameBoard from '../components/GameBoard';
 import style from '../Styles/style';
 
