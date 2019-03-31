@@ -3,12 +3,13 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     basicText: {
         color: 'blue',
-        fontSize: 20,
+		fontSize: 20,
+		padding: 20
     },
     pageTitle: {
         color: 'blue',
-        fontSize: 40,
-        padding: 100,
+        fontSize: 60,
+        padding: 20,
     },
     container: {
         flex: 1,
@@ -16,29 +17,32 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     button: {
-        padding: 15,
+        padding: 30,
         margin: 5,
-        backgroundColor: '#58ff15',
+        backgroundColor: '#48df08',
         borderRadius: 100,
     },
     buttonText: {
         fontSize: 50,
-        textAlign: 'center',
+		textAlign: 'center',
+		color: 'black'
     },
     grid: {
         flexDirection: 'column',
-        flex: 9,
+		flex: 9,
     },
     gridRow: {
         flexDirection: 'row',
-        flex: 1,
+		flex: 1,
+		alignContent: 'center',
+		alignItems: 'center',
     },
     tile: {
-        padding: 10,
+        padding: 3,
         margin: 1,
         borderWidth: 5,
         borderColor: 'black',
-        borderRadius: 40,
+        borderRadius: 25,
         width: 50,
         height: 50
     },
