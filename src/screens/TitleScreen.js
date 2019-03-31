@@ -10,8 +10,8 @@ export default class TitleScreen extends Component {
 
     render() {
         return(
-            <View style={style.container}>
-                <Text style={style.pageTitle}>Connect 4</Text>
+            <View style={[style.container, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'yellow'}]}>
+                <Text style={[style.pageTitle, {fontSize: 80}]}>Connect 4</Text>
                  <Button press={() => navigationService.navigate('Game')}
                         name='Play Game'
                 />

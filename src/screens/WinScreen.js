@@ -19,7 +19,7 @@ export default class WinScreen extends Component {
     getWinText() {
         let winText;
         if(this.state.winner === -1) {
-            winText = 'Player One Wins!';
+			winText = 'Player One Wins!';
         }
         else if(this.state.winner === 1) {
             winText = 'Player Two Wins!';
@@ -32,8 +32,8 @@ export default class WinScreen extends Component {
 
     render() {
         return(
-            <View style={style.container}>
-                <Text style={style.pageTitle}>{this.state.winnerText}</Text>
+            <View style={[style.container, {backgroundColor: 'yellow', alignItems: 'center', justifyContent: 'center', alignContent: 'center'}]}>
+                <Text style={{color: 'blue', fontSize: 45, margin: 10, fontWeight: 'bold'}}>{this.state.winnerText}</Text>
                 <Button name="Main Menu" press={() => this.props.navigation.dispatch(StackActions.popToTop())}></Button>
             </View>
         );
